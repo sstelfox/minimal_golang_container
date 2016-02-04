@@ -1,0 +1,11 @@
+FROM golang:alpine
+
+RUN mkdir /app
+WORKDIR /app
+
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+
+# /usr/local/go/bin/go build -a -installsuffix cgo -o main .
+
+ENTRYPOINT ["/usr/local/go/bin/go"]

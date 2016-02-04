@@ -1,0 +1,11 @@
+FROM alpine:latest
+
+RUN apk upgrade --no-cache
+RUN apk add --no-cache ca-certificates
+
+ADD output/main /
+
+CMD ["/main"]
+
+# Optionally expose ports...
+#EXPOSE 80
